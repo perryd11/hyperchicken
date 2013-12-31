@@ -30,5 +30,3 @@ module RatMan
   private_class_method :wait_for_javascript
 
 end
-
-RatMan.login! nil
