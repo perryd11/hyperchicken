@@ -4,4 +4,5 @@ group :development do
   gem 'pry'
 end
 
+gem 'poltergeist'
 gem 'tweetstream'
