@@ -1,6 +1,8 @@
 require 'tweetstream'
 require_relative 'seakrets'
 
+require_relative 'rat_man'
+
 TweetStream.configure do |config|
   config.consumer_key       = CONSUMER_KEY
   config.consumer_secret    = CONSUMER_SECRET
