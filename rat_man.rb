@@ -11,7 +11,7 @@ module RatMan
 
   include Capybara::DSL
 
-  def self.login!(session)
+  def self.login!(session=nil)
     session ||= Capybara::Session.new(:poltergeist)
 
     session.visit(HOMEPAGE)
