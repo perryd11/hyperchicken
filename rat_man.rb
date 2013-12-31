@@ -24,6 +24,12 @@ module RatMan
     return session
   end
 
+  def self.follow_link!(session, link)
+    session.visit(link)
+    wait_for_javascript
+    session.save_screenshot('followed.png')
+  end
+
   def self.wait_for_javascript
     sleep 4
   end

@@ -11,6 +11,7 @@ TweetStream.configure do |config|
   config.auth_method        = :oauth
 end
 
-  puts "#{status.text}"
+session = RatMan.login!
 TweetStream::Client.new.follow(TARGET_ID).on_timeline_status do |status|
+  RatMan.follow_link!(session, $1) if status.text =~ /available (http:\/\/t.co\/\w+)/
 end
