@@ -9,8 +9,6 @@ TweetStream.configure do |config|
   config.auth_method        = :oauth
 end
 
-jonesdeini = 266248662
-
-TweetStream::Client.new.follow(jonesdeini) do |status|
+TweetStream::Client.new.follow(TARGET_ID) do |status|
   puts "#{status.text}"
 end
