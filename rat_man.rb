@@ -4,7 +4,6 @@ require "capybara/dsl"
 
 require_relative 'seakrets'
 
-Capybara.app_host = APP_HOST
 Capybara.javascript_driver = :poltergeist
 Capybara.run_server = false
 
@@ -15,7 +14,7 @@ module RatMan
   def self.login!(session)
     session ||= Capybara::Session.new(:poltergeist)
 
-    session.visit("/us/en_us")
+    session.visit(HOMEPAGE)
     session.click_link("LOG IN")
     session.fill_in("email", :with => EMAIL)
     session.fill_in("password", :with => PASS)
