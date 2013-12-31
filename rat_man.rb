@@ -21,6 +21,7 @@ module RatMan
     session.click_button("LOG IN")
     wait_for_javascript
     session.save_screenshot('login.png')
+    return session
   end
 
   def self.wait_for_javascript
