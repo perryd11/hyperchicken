@@ -11,6 +11,6 @@ TweetStream.configure do |config|
   config.auth_method        = :oauth
 end
 
-TweetStream::Client.new.follow(TARGET_ID) do |status|
   puts "#{status.text}"
+TweetStream::Client.new.follow(TARGET_ID).on_timeline_status do |status|
 end
